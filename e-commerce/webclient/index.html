@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/moon.icon.jpeg">
+  <title>Lunar Coffee Supply & Co.</title>
+  <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+
+<body onload="showSlides()">
+
+  <div class="box">
+    <div class="moon"></div>
+    <h1>Lunar Coffee Supply & Co.</h1>
+  </div>
+
+  <div class="nav-box">
+    <ul class="topnav navbar">
+      <li class="navbarLink"><a href="index.html">HOME</a></li>
+      <li class="navbarLink"><a href="products.html">SHOP</a></li>
+      <li class="navbarLink"><a href="search.html">SEARCH</a></li>
+      <li class="navbarLink"><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <img src="../images/brewers/chemex.3.jpg">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="../images/french.press.2.jpg">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="/images/espresso.jpg">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  </div>
+  <br>
+
+  <div>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <h4>FEATURED PRODUCTS</h4>
+
+  <div class="container">
+    <div class="interior div1">
+      <a href="productinfo.html">
+        <img class="featuredimage" src="../images/featured.products/coffee.scoop.jpg" alt="coffee scoop"></a>
+    </div>
+    <div class="interior div2">
+      <a href="productinfo.html">
+        <img class="featuredimage" src="../images/featured.products/bialetti.moka.jpg" alt="bialetti"></a>
+    </div>
+    <div class="interior div3">
+      <a href="productinfo.html">
+        <img class="featuredimage" src="../images/featured.products/mug.jpg" alt="mug"></a>
+    </div>
+  </div>
+
+  <footer>
+    <nav>
+      <div class="connect">
+        <h5>Connect with Us</h5>
+      </div>
+      <ul class="media">
+
+        <li class="icon"><a href="https://www.facebook.com/redventures/"><img class="facebook"
+              src="../images/social/fb.icon.png"></a></li>
+        <li class="icon"><a href="https://www.instagram.com/redventures/"><img class="instagram"
+              src="../images/social/Instagram-icon.png"></a></li>
+        <li class="icon"><a href="https://twitter.com/redventures"><img class="twitter"
+              src="../images/social/twitter icon.png"></a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script type="text/javascript" src="/JavaScript/slideshow.js"></script>
+</body>
+
+</html>

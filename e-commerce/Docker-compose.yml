@@ -1,0 +1,43 @@
+version : '3.7'
+services:
+    database:
+        container_name: sqldb
+        build:
+            context: ./database
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpassword!
+            MYSQL_DATABASE: lunar
+        ports:
+            - "5000:3306"
+        networks:
+            - backend
+    app:
+        container_name: go_api
+        build:
+            context: ./app
+        ports:
+            - "8000:8000"
+        networks:
+            - frontend
+            - backend
+        depends_on:
+            - database
+    frontend:
+        container_name: front_end
+        build:
+            context: ./webclient
+        ports:
+            - 4000:80
+        networks:
+            - frontend
+        depends_on:
+            - database
+            - app
+networks:
+    frontend:
+    backend:
+
+
+
+
+
