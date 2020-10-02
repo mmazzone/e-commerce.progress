@@ -21,7 +21,8 @@ type Product struct {
 	ProductName  string `json:"product_name"`
 	ProductDesc  string `json:"product_desc"`
 	ProductPrice string `json:"product_price"`
-	ImgLink      string `json:"img_link"`
+	InfoLink     string `json:"info_link"`
+	ImgSrc       string `json:"img_src"`
 	Categories   string `json:"categories"`
 }
 
@@ -33,53 +34,71 @@ type ContactInfo struct {
 	PhoneNumber  string `json:"phone_number"`
 }
 
-// INIT PRODUCTS VAR AS A SLICE PRODUCT STRUCT
-var products []Product
-
 // GET ALL PRODUCTS
+
 func getProducts(w http.ResponseWriter, r *http.Request) {
 	fmt.Println()
 	fmt.Println("product Endpoint hit")
 	fmt.Println()
 
-	w.Header().Set("Content-Type", "application/json")
+	// w.WriteHeader(http.StatusOK)
+	// w.Header().Set("Content-Type", "application/json")
 	// json.NewEncoder(w).Encode(products)
+
+	// INIT PRODUCTS VAR AS A SLICE PRODUCT STRUCT
+	products := []Product{}
 
 	result, err := db.Query("SELECT * FROM products")
 	if err != nil {
 		fmt.Println(err)
+		return
 	}
 
-	defer result.Close()
+	// defer result.Close()
 
+	// creating a new variable and setting the value to existing struct
 	for result.Next() {
+		// creating a new struct for each row
 		var product Product
-		err := result.Scan(&product.ProductId, &product.Discontinued, &product.ProductName, &product.ProductDesc, &product.ProductPrice, &product.ImgLink, &product.Categories)
+		// checking for discrepencies
+		err := result.Scan(&product.ProductId, &product.Discontinued, &product.ProductName, &product.ProductDesc,
+			&product.ProductPrice, &product.InfoLink, &product.ImgSrc, &product.Categories)
 		if err != nil {
-			panic(err.Error())
+			fmt.Println(err)
+			return
 		}
+		// append the return values to original products variable
 		products = append(products, product)
 	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(products)
 
 }
 
-// // GET SINGLE PRODUCT
-// funct getProduct(w http.ResponseWriter, r *http.Request) {
+//GET SINGLE PRODUCT
+// func getProduct(w http.ResponseWriter, r *http.Request) {
+
+// 	fmt.Println()
+// 	fmt.Println("single product")
+// 	fmt.Println()
+
 // 	w.Header().Set("Content-Type", "application/json")
 // 	params := mux.Vars(r) // GET PARAMS
 // 	// LOOP THROUGH PRODUCTS AND FIND WITH ID
-// 	for _, item := range products {
-// 		if item.ID == params["id"] {
-// 			json.NewEncoder(w).Encode(item)
+// 	for _, Product := range products {
+// 		if Product.ProductId == params["id"] {
+// 			json.NewEncoder(w).Encode(Product)
 // 			return
 // 		}
 // 	}
-// 	json.NewEncoder(w).Encode(&Product{})
+// 	json.NewEncoder(w).Encode(products)
+
 // }
 
-// CREATE A NEW CONTACT
-// funct createContact(w http.ResponseWriter, r *http.Request) {
+//CREATE A NEW CONTACT
+// func createContact(w http.ResponseWriter, r *http.Request) {
 // 	w.Header().Set("Content-Type", "application/json")
 // 	var book Book
 // 	_ = json.NewDecoder(r.Body).Decode(&book)
@@ -91,28 +110,31 @@ func getProducts(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// local db connection
 	//                  driver
-	database, err := sql.Open("mysql", "root:rootpassword!@tcp(database:3306)/lunar")
+	db, err := sql.Open("mysql", "root:rootpassword!@tcp(database:3306)/lunar")
 	if err != nil {
-		panic(err.Error())
+		fmt.Println(err)
+		return
 	}
 
 	fmt.Println()
 	fmt.Println("connected to database")
 	fmt.Println()
 
-	db = database
+	// db = database
 
 	defer db.Close()
 
 	// Init router
+	fmt.Println("Init Router")
 	r := mux.NewRouter()
 
-	// MOCK DATA - @TODO - IMPLEMENT DB
-
 	// Route Handlers / end points
+	fmt.Println("Prior to products function.")
 	r.HandleFunc("/products", getProducts).Methods("GET")
-	//r.HandleFunc("/api/books/{id}", getBooks).Methods("GET")
-	// r.HandleFunc("/webclient/contact", createContact).Methods("POST")
+	fmt.Println("Post products function.")
+	// r.HandleFunc("/products", getProduct).Methods("GET")
+	// fmt.Println("get one product.")
+	// r.HandleFunc("/contact", createContact).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":8000", r))
 }

@@ -8,7 +8,7 @@ CREATE TABLE contact_info (
     email_address VARCHAR(255),
     phone_number INT
 
-)
+);
 
 CREATE TABLE products (
     product_id SERIAL PRIMARY KEY NOT NULL,
@@ -20,15 +20,15 @@ CREATE TABLE products (
     img_src VARCHAR(255),
     categories VARCHAR(255)
 
-)
+);
 
 CREATE TABLE product_info (
     product_name VARCHAR (255),
-    product_desc VARCHAR (255),
+    product_desc VARCHAR (1000),
     product_price DECIMAL (5,2),
     img_src VARCHAR (255)
     
-)
+);
 -- CREATE TABLE errors (
 
 -- )
@@ -57,4 +57,4 @@ VALUES
             the perfect amount of essentials oils and acids from the coffee bean for maximum flavor; the preferred
             method for brewing
             for coffee enthusiasts everywhere! Servings: premium French Press Coffee maker makes 4 cups of Coffee, 8 oz
-            each",19.99,"../images/brewers/french.press.jpg")
+            each",19.99,"../images/brewers/french.press.jpg");
