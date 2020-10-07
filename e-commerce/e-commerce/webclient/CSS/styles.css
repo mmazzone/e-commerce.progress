@@ -1,0 +1,242 @@
+
+body {
+  text-align: center;
+  background-image: url('../images/coffee.bean.3.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right bottom;
+  margin: 0px;
+}
+
+.box {   
+  padding: 20px;
+  text-align: center;
+} 
+
+.moon {
+  margin: 20px auto auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 7px 7px 0 0 #252526;
+  transform: scaleX(-1);
+  padding: 7px;
+}
+
+h1 {
+  font-family: montserrat;
+  font-size: 50px;
+  font-weight: 100;
+  padding-bottom: 30px;
+}  
+
+.nav-box {
+  text-align: center;
+  margin: 30px auto 15px;
+}
+
+.topnav {
+  font-family: montserrat;
+  font-weight: 500;
+  color: #252526;
+  padding: 20px;
+  font-size: 15;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbarLink {
+  display: inline-block;
+  width: 10%;
+}
+
+.navbarLink:hover {
+  background-color: lightgray;
+  opacity: .6;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.slideshow-container { 
+  max-width: 350px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding: 50px 50px 10px 50px;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+  height: 390px;
+  width: 350px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color:  lightgray;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: black;
+}
+
+h4 {
+  font-weight: 500;
+  font-family: montserrat;
+  align-content: space-between;
+  padding: 30px 0px 0px;
+}
+
+.container {
+  background-color: rgba(215, 215, 215, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+}
+
+.interior {
+  margin: 20px;
+  height: 200px;
+  width: 200px;
+}
+
+.featuredimage {
+  height: 200px;
+  width: 200px;
+}
+
+.featuredimage:hover {
+  opacity: .8;
+}
+
+footer {
+  margin-top: 50px;
+  margin-bottom: 0px;    
+}
+
+h5 {
+  margin: 0;
+  font-family: montserrat;
+  font-weight: 400;
+}
+
+.connect {
+  border: 3px solid lightgray;
+  background-color: lightgray;
+  opacity: .9;
+}
+
+.media {
+  background-color: lightgray;
+  opacity: .9;
+  display: flex;
+  justify-content: center;
+  border: 8px solid lightgray;
+}
+
+.media li {
+  margin: auto 25px auto;
+}
+
+ul {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.media img {
+  height: 30px;
+  width: 30px;
+}
+.icon {
+  list-style-type: none;
+}
+
+.icon:hover {
+  opacity: .5;
+}
+
+@media screen and (max-width: 800px){
+
+  .navbarLink {
+    width: auto;
+  }
+  
+  .container {
+    flex-direction: column;
+  }  
+
+  .interior {
+    margin-top 5%;
+    height: 100%;
+    width: 100%;
+  }
+
+  .featuredimage {
+    height: 300px;
+    width: 300px;
+    
+  }
+}
+
+@media screen and (max-width: 1900px){
+  img {
+    vertical-align: middle;
+    height: 390px;
+    width: 350px;
+  }
+
+  .featuredimage {
+    height: 200px;
+    width: 200px;
+  }
+}

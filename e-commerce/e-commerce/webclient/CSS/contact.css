@@ -1,0 +1,157 @@
+body {
+  text-align: center;
+  background-image: url(../images/background/coffee.bean.4.jpg);
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  margin: 0;
+  font-family: montserrat;
+}
+
+.container {
+  height: auto;
+  width: 320px;
+  background-color: rgba(215, 215, 215, 0.7);
+  margin: auto;
+}
+
+h1 {
+  font-weight: 200;
+  color: #252526;
+}
+
+input[text="type"],
+textarea {
+  font-family: Arial;
+  color: #0b0b0e;
+}
+
+p {
+  text-align: left;
+}
+
+#contact {
+  font-family: montserrat;
+  color: #252526;
+  font-weight: 400;
+}
+
+label#contactoption {
+  font-family: montserrat;
+  color: #252526;
+  font-weight: 400;
+  float: left;
+}
+
+input[type="radio"] {
+  float: left;
+}
+
+form {
+  /* display: inline-block; */
+  margin: 30px auto auto;
+  padding: 10px;
+}
+
+#message {
+  box-sizing: border-box;
+  height: 100px;
+  width: 190px;
+}
+
+input[type="submit"] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: 1px solid gray;
+}
+
+label#contact {
+  float: left;
+}
+
+.nav-box {
+  text-align: center;
+  margin: 30px auto 15px;
+}
+
+.topnav {
+  font-family: montserrat;
+  font-weight: 500;
+  color: #252526;
+  padding: 20px;
+  font-size: 15;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbarLink {
+  display: inline-block;
+  width: 10%;
+}
+
+.navbarLink:hover {
+  background-color: lightgray;
+  opacity: 0.6;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+
+h5 {
+  margin: 0;
+  font-family: montserrat;
+  font-weight: 400;
+}
+
+.connect {
+  border: 3px solid lightgray;
+  background-color: lightgray;
+  opacity: 0.9;
+}
+
+.media {
+  background-color: lightgray;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  border: 8px solid lightgray;
+}
+
+.media li {
+  margin: auto 25px auto;
+}
+
+ul {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.media img {
+  height: 30px;
+  width: 30px;
+}
+.icon {
+  list-style-type: none;
+}
+
+.icon:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 800px) {
+  .navbarLink {
+    width: auto;
+  }
+}
