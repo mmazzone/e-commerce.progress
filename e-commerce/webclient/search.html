@@ -5,9 +5,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../images/moon.icon.jpeg">
+  <link rel="icon" href="images/moon.icon.jpeg">
   <title>SEARCH LUNAR</title>
-  <link rel="stylesheet" href="/CSS/search.css">
+  <link rel="stylesheet" href="CSS/search.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -34,12 +34,15 @@
   </div>
 
   <div class=search>
-    <form action="" method="get" target="blank">
-      <label for="search" id="search"></label>
-      <input type="text" placeholder="Search...">
-      <button type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+    <form method="get" >
+      <label for="search"></label>
+      <input type="text" id="search" placeholder="Search...">
+      <button type="button" onclick = "priceValues();"><i class="fa fa-search" aria-hidden="true"></i>
       </button>
     </form>
+  </div>
+
+  <div class="container" id="products">
   </div>
 
   <footer>
@@ -50,14 +53,16 @@
       <ul class="media">
 
         <li class="icon"><a href="https://www.facebook.com/redventures/"><img class="facebook"
-              src="../images/social/fb.icon.png"></a></li>
+              src="images/social/fb.icon.png"></a></li>
         <li class="icon"><a href="https://www.instagram.com/redventures/"><img class="instagram"
-              src="../images/social/Instagram-icon.png"></a></li>
+              src="images/social/Instagram-icon.png"></a></li>
         <li class="icon"><a href="https://twitter.com/redventures"><img class="twitter"
-              src="../images/social/twitter icon.png"></a></li>
+              src="images/social/twitter icon.png"></a></li>
       </ul>
     </nav>
   </footer>
 </body>
+
+<script src="JavaScript/search.js"></script>
 
 </html>
